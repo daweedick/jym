@@ -1,0 +1,14 @@
+main\exercise\ExerciseRepositoryPort.class
+main\exercise\ExerciseService.class
+main\muscle\MuscleServiceImpl.class
+main\muscle\MuscleService.class
+main\muscle\MuscleRepository.class
+main\exercise\ExerciseRepositoryAdapter.class
+main\muscle\Muscle.class
+main\exercise\ExerciseServiceImpl.class
+main\muscle\MuscleRepositoryAdapter.class
+main\exercise\ExerciseQueryResolver.class
+main\exercise\ExerciseRepository.class
+main\muscle\MuscleQueryResolver.class
+main\muscle\MuscleRepositoryPort.class
+main\exercise\Exercise.class

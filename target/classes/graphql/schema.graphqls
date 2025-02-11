@@ -1,0 +1,52 @@
+type Muscle {
+    id: ID!
+    name: String!
+    exercises: [Exercise!]!
+
+}
+type Exercise {
+    id: ID!
+    name: String!
+    muscle: Muscle!
+    description: String!
+    descriptionPath: String!
+}
+type User{
+    id: ID!
+    username: String!
+    email: String!
+    password: String!
+}
+
+type WorkoutPlan{
+    id: ID!
+    name: String!
+    exercises: [Exercise!]!
+    user: User!
+}
+type Query{
+    muscle(id: ID!): Muscle
+    muscles: [Muscle!]!
+    exercise(id: ID!): Exercise
+    exercises(muscleName: String!): [Exercise!]!
+    user(id: ID!): User
+    users: [User!]!
+    plan(id: ID!): WorkoutPlan
+    plansByUserId(id:ID!): [WorkoutPlan!]
+
+}
+type Mutation{
+    addMuscle(name:String!):Muscle!
+    addExercise(name: String!, muscleId: ID!, description: String!, descriptionPath: String!): Exercise!
+
+    updateExercise(id: ID!, name: String, muscleId: ID, description: String, descriptionPath: String): Exercise!
+    deleteExercise(id:ID!): Boolean!
+
+    createUser(username: String!, email: String!, password: String!): User!
+    updateUser(id:ID!, username: String, email: String): User!
+    deleteUser(id:ID!): Boolean!
+
+    createWorkoutPlan(userId: ID!, name: String!): WorkoutPlan!
+    addExerciseToWorkoutPlan(workoutPlanId: ID!, exerciseId: ID!): Boolean!
+    deleteWorkoutPlan(id: ID!): Boolean!
+}
